@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html class="light" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Nurtured Horizon - Das Nest-Projekt</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#4f645b",
+                        "primary-dim": "#43574f",
+                        "primary-container": "#d1e8dd",
+                        "on-primary": "#e7fef3",
+                        "on-primary-container": "#42564e",
+                        "secondary": "#4a6274",
+                        "secondary-container": "#cde6fc",
+                        "on-secondary-container": "#3d5466",
+                        "tertiary": "#875237",
+                        "tertiary-container": "#f9b493",
+                        "on-tertiary-container": "#60321a",
+                        "surface": "#fbf9f6",
+                        "surface-container": "#efeeea",
+                        "surface-container-low": "#f5f3f0",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#313330",
+                        "on-surface-variant": "#5e5f5c",
+                        "outline-variant": "#b2b2ae"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .bg-nesting-gradient {
+            background: radial-gradient(circle at top left, #d1e8dd 0%, transparent 40%),
+                        radial-gradient(circle at bottom right, #cde6fc 0%, transparent 40%);
+        }
+        .phase-hidden { display: none; }
+        .card-selected {
+            background-color: #d1e8dd !important; /* primary-container */
+            border-color: #4f645b !important; /* primary */
+            transform: scale(0.98);
+        }
+        .animate-spin-slow { animation: spin 20s linear infinite; }
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface min-h-screen selection:bg-primary-container overflow-x-hidden">
+<!-- Common Header (Hidden on Intro, shown elsewhere) -->
+<header class="bg-white/80 backdrop-blur-xl flex justify-between items-center w-full px-6 py-4 sticky top-0 z-50 shadow-sm phase-hidden" id="main-header">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">nest_eco_leaf</span>
+<span class="text-xl font-bold text-primary tracking-tighter font-headline">The Nurtured Horizon</span>
+</div>
+<nav class="hidden md:flex items-center gap-8 font-headline text-sm tracking-tight">
+<a class="text-primary font-semibold border-b-2 border-primary pb-1" href="#">My Journey</a>
+<a class="text-on-surface-variant/60 hover:text-primary transition-colors" href="#">Resources</a>
+<a class="text-on-surface-variant/60 hover:text-primary transition-colors" href="#">Settings</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary">account_circle</button>
+</div>
+</header>
+<main id="app-container">
+<!-- Intro Phase -->
+<section class="relative min-h-screen flex flex-col items-center justify-center p-6 md:p-12 bg-nesting-gradient" id="phase-0">
+<div class="max-w-3xl w-full space-y-12">
+<div class="flex flex-col items-center text-center space-y-8">
+<div class="relative w-48 h-48 md:w-64 md:h-64 flex items-center justify-center bg-surface-container-low rounded-xl shadow-sm overflow-hidden transform rotate-2">
+<img alt="Friendly Chick" class="w-full h-full object-cover mix-blend-multiply opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAThIt1SA8SZZ5UB_3fsiHq3PokW-n4HhRQhKJwTszGIBwhXwVlhXwFizDatAcMchswLiAZVhzFrLKfOY_Etio22bymDOEWVtEtvI3rg1mozM6K4ynA5uw8R3sE6RuJGKzZ-HE0TwZCtVHpoKrCoKpVEhyWBJJ30wJgkWnfrugZEr1qQeRy0jDTaJICvQeKC9vPD2s64MwlrvzG4oWBsSFD3tqpvSulSt-m2BdnpaTJt-26wFLhOCoEwvYQtYxxYPEwVB4lv7vscI4v"/>
+<span aria-label="chick" class="absolute text-7xl select-none" role="img">🐣</span>
+</div>
+<div class="space-y-4">
+<h1 class="font-headline font-extrabold text-5xl md:text-7xl text-on-surface tracking-tighter leading-tight">Das Nest-Projekt</h1>
+<p class="font-headline text-2xl md:text-3xl text-primary font-semibold max-w-2xl mx-auto">Willkommen zum Team-Check für werdende Eltern.</p>
+</div>
+<p class="text-on-surface-variant text-lg md:text-xl font-medium max-w-xl">Dieses Spiel hilft euch, eure gemeinsame Ehe-Landkarte zu zeichnen, bevor das Baby das Kommando übernimmt.</p>
+</div>
+<div class="bg-surface-container-lowest/60 backdrop-blur-xl p-8 rounded-xl shadow-sm border border-white/40 flex flex-col md:flex-row gap-6 items-start relative">
+<div class="bg-tertiary-container/30 p-4 rounded-full flex-shrink-0">
+<span class="material-symbols-outlined text-tertiary text-3xl" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+</div>
+<div class="space-y-3">
+<h3 class="font-headline text-sm font-bold text-tertiary uppercase tracking-widest">Therapeutic Tip</h3>
+<blockquote class="text-on-surface text-xl font-semibold italic">„Nutzt heute die Wir-Brille. Fragt nicht: Was machst du falsch?, sondern: Wie wollen wir verhindern, dass dieses Thema unsere Liebesbeziehung auffrisst?“</blockquote>
+</div>
+</div>
+<div class="flex flex-col items-center gap-6">
+<button class="group px-12 py-5 bg-primary text-on-primary rounded-full font-headline font-bold text-xl shadow-xl hover:scale-[1.02] active:scale-95 transition-all" onclick="nextPhase(1)">
+<span class="flex items-center gap-3">Start Game <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span></span>
+</button>
+<p class="text-sm font-label text-on-surface-variant uppercase tracking-widest">Dauer: ca. 15 Minuten • 2 Spieler</p>
+</div>
+</div>
+</section>
+<!-- Phase 1: Die Gepäck-Kontrolle -->
+<section class="phase-hidden max-w-5xl mx-auto px-6 pt-12 pb-32" id="phase-1">
+<div class="mb-12">
+<div class="flex justify-between items-end mb-4 font-headline">
+<div>
+<span class="text-secondary font-bold uppercase tracking-widest text-xs">Phase 1</span>
+<h2 class="text-4xl md:text-5xl font-extrabold text-on-surface tracking-tight">Die Gepäck-Kontrolle</h2>
+</div>
+<span class="text-primary font-bold text-lg">25%</span>
+</div>
+<div class="h-3 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-1/4 transition-all duration-700"></div>
+</div>
+</div>
+<div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+<div>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-6">Wir alle bringen unsichtbares Gepäck aus unserer Kindheit mit in das gemeinsame Nest. Bevor wir den Alltag gestalten, schauen wir uns an, welche Muster euch geprägt haben.</p>
+<div class="inline-flex items-center gap-3 px-5 py-3 bg-secondary-container text-on-secondary-container rounded-full text-sm font-bold">
+<span class="material-symbols-outlined text-xl">info</span> Wähle alle Karten aus, die auf dich zutreffen.
+                </div>
+</div>
+<div class="rounded-xl overflow-hidden shadow-lg aspect-video bg-surface-container-low">
+<img class="w-full h-full object-cover mix-blend-multiply opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_Ji-qqG_yiJFIK_WTD4hCPPzSRLl6QRCaMNeLh-ui7pyOAS6nZY8uQiH-zt5NaYBu0-VqAjbvNI7IlIhs0HrAORDKWoZOplLGAnowO1EDR4fd_svcutTc9uT75aMN_gdAPdiklr3Vp0CAQRlONhDpz-XSmvuChT-kkzIvkro9_JrImWvyFBpnT1CVW8whzfuF3-KJghxl7s0RPRmMC2enbuRF1kNHNx4yhX47zwnMMgbrQQW3zKHGxNCvzEqsRbP8CNPx8mbdtY6h"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+<button class="group p-8 text-left bg-surface-container-low rounded-xl border-2 border-transparent transition-all hover:bg-surface-container" onclick="toggleCard(this)">
+<span class="material-symbols-outlined text-4xl text-primary mb-4">groups</span>
+<h3 class="text-xl font-bold mb-2">Traditionelle Rollen</h3>
+<p class="text-on-surface-variant text-sm">Klare Aufteilung zwischen Mutter und Vater.</p>
+</button>
+<button class="group p-8 text-left bg-surface-container-low rounded-xl border-2 border-transparent transition-all hover:bg-surface-container" onclick="toggleCard(this)">
+<span class="material-symbols-outlined text-4xl text-primary mb-4">task_alt</span>
+<h3 class="text-xl font-bold mb-2">Hausarbeit organisiert</h3>
+<p class="text-on-surface-variant text-sm">Alles hatte seinen festen Platz und Plan.</p>
+</button>
+<button class="group p-8 text-left bg-surface-container-low rounded-xl border-2 border-transparent transition-all hover:bg-surface-container" onclick="toggleCard(this)">
+<span class="material-symbols-outlined text-4xl text-primary mb-4">home_repair_service</span>
+<h3 class="text-xl font-bold mb-2">Externe Hilfe</h3>
+<p class="text-on-surface-variant text-sm">Unterstützung von außen war ganz normal.</p>
+</button>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-10 text-center shadow-sm relative overflow-hidden mb-12 border border-outline-variant/10">
+<span class="material-symbols-outlined text-tertiary text-5xl mb-6">forum</span>
+<h2 class="text-2xl md:text-3xl font-bold mb-6">Tauscht euch aus:</h2>
+<p class="text-xl text-on-surface-variant">"Was davon stresst dich heute am meisten, wenn es bei uns anders läuft?"</p>
+</div>
+<div class="flex justify-center">
+<button class="bg-primary text-on-primary px-12 py-5 rounded-full font-bold text-lg shadow-lg hover:bg-primary-dim transition-all flex items-center gap-3" onclick="nextPhase(2)">
+                Continue to Daily Life <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- Phase 2: Alltag & Mental Load -->
+<section class="phase-hidden max-w-7xl mx-auto px-6 pt-12 pb-32" id="phase-2">
+<div class="mb-16">
+<div class="flex justify-between items-end mb-4">
+<div>
+<span class="font-headline text-xs uppercase tracking-widest text-secondary font-bold">Phase 2</span>
+<h2 class="font-headline text-4xl md:text-5xl font-extrabold text-on-surface tracking-tight mt-1">Das Kartenhaus des Alltags</h2>
+</div>
+<span class="font-headline text-2xl font-bold text-primary">50%</span>
+</div>
+<div class="w-full h-3 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-1/2 transition-all duration-700"></div>
+</div>
+</div>
+<div class="grid lg:grid-cols-12 gap-12 mb-16 items-center">
+<div class="lg:col-span-7">
+<p class="text-xl text-on-surface-variant leading-relaxed">Mental Load ist das unsichtbare Gewicht der Verantwortung. Im „Kartenhaus des Alltags“ schauen wir uns an, wie Aufgaben verteilt sind und wer die „Regie“ führt.</p>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="aspect-square bg-secondary-container rounded-xl overflow-hidden shadow-2xl rotate-3">
+<img class="w-full h-full object-cover opacity-80 mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB36KTK2InFiun--Chd4JaWzqKnEi4yQMN5vHQc77TJ3dtyR7zYv1UrMkbmN7rjvG80icz3_BbnsFYkLwHNN_EYAjpwFnIhiP0De8bXjHIO-N-WrvcqyaAxBVSzoVt069CHKhhWU_pTwyhWgBYxhpod8g-RpxD1pUzrgvFEX3B2VRoh9cMlJS2t8k1Dfd_JiPM21TqyKUng_ZK6ege8nUd0b1xDmd0VqIWSTiL_Ptm1Vz5pQzc0jHFoCIXh9MZmScBwoM4FB93RLOZP"/>
+</div>
+<div class="absolute -bottom-6 -left-6 bg-tertiary-container p-6 rounded-lg shadow-xl -rotate-3 max-w-[240px]">
+<p class="font-headline text-on-tertiary-container font-bold leading-tight">„Mental Load ist das Planen, an das keiner denkt, bis es vergessen wird.“</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24">
+<div class="bg-surface-container-low p-8 rounded-xl hover:bg-surface-container transition-all">
+<div class="w-12 h-12 bg-primary-container rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary">local_laundry_service</span>
+</div>
+<h3 class="font-headline text-xl font-bold mb-3">Wäsche-Management</h3>
+<p class="text-on-surface-variant text-sm">Wer behält den Überblick über saubere Bodies?</p>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl hover:bg-surface-container transition-all">
+<div class="w-12 h-12 bg-secondary-container rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-secondary">shopping_cart</span>
+</div>
+<h3 class="font-headline text-xl font-bold mb-3">Einkaufsliste</h3>
+<p class="text-on-surface-variant text-sm">Wochenplan erstellen, Vorräte prüfen.</p>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl hover:bg-surface-container transition-all">
+<div class="w-12 h-12 bg-tertiary-container rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-tertiary">child_care</span>
+</div>
+<h3 class="font-headline text-xl font-bold mb-3">Windeln/Zubehör</h3>
+<p class="text-on-surface-variant text-sm">Bestände prüfen und rechtzeitig nachbestellen.</p>
+</div>
+</div>
+<div class="grid md:grid-cols-2 gap-8">
+<div class="bg-tertiary-container/20 rounded-xl p-10 flex flex-col justify-center border border-tertiary-container/30">
+<h3 class="font-headline text-2xl font-bold text-tertiary mb-6">Gemeinsamer Dialog</h3>
+<p class="text-on-surface-variant font-medium mb-8">„Wo häufen sich die Karten bei einer Person? Wo brauchen wir ein Backup?“</p>
+<div class="flex gap-4">
+<button class="bg-tertiary text-white px-8 py-4 rounded-full font-bold shadow-lg">Diskussion starten</button>
+</div>
+</div>
+<div class="bg-primary p-10 rounded-xl flex flex-col items-center justify-center text-center text-on-primary">
+<span class="material-symbols-outlined text-5xl mb-6">balance</span>
+<h3 class="font-headline text-2xl font-bold mb-4">Werte definieren</h3>
+<p class="mb-8 opacity-90 max-w-xs">Was ist uns wirklich wichtig? Legt Standards fest, um Druck rauszunehmen.</p>
+<button class="bg-white text-primary px-10 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform" onclick="nextPhase(3)">Set Our Values</button>
+</div>
+</div>
+</section>
+<!-- Phase 3: Die Werte-Auktion -->
+<section class="phase-hidden max-w-5xl mx-auto px-6 pt-12 pb-32" id="phase-3">
+<div class="mb-16">
+<div class="flex justify-between items-end mb-4 font-headline">
+<div>
+<span class="text-secondary font-bold tracking-widest text-xs uppercase">Phase 3</span>
+<h2 class="text-4xl md:text-5xl font-extrabold text-primary tracking-tighter mt-2">Die Werte-Auktion</h2>
+</div>
+<span class="text-3xl font-bold text-tertiary">75%</span>
+</div>
+<div class="h-3 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-3/4 transition-all duration-700"></div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16 items-center">
+<div class="md:col-span-7">
+<p class="text-xl text-on-surface-variant leading-relaxed">Was ist Ihnen in der ersten Zeit als Familie heilig? Wählen Sie die <strong class="text-primary">drei Werte</strong> aus, die für Sie beide am wichtigsten sind.</p>
+</div>
+<div class="md:col-span-5">
+<div class="rounded-xl overflow-hidden aspect-video">
+<img class="w-full h-full object-cover opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTMpOQP1YaDDochde3TsBiDl5dIQayhNQ5jpjnszmwhZ3X75U2QrQk5TqsoWg3xjzutlLbdEDi1mPXRn3S98IYfU4k3s48dEEYfWvxWP9wqZ6Fz34be6BN__QCKP02cViValg7M1Q4U1l9mITI5I0hX-RmL3RCkfSjjx7kiQr66yF_MPX1XD_kS7LYCQGsheEMjkcPdVdwFt8jvhHIv7TxQ4WsKCfEZNAXok4VmbLOBnO7QX9OCoiatCw_D5UY-Z1inUOpEcfD6ph1"/>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16" id="values-grid">
+<button class="group text-left p-8 rounded-xl bg-white border-2 border-transparent shadow-sm hover:border-primary/20 transition-all" onclick="toggleCard(this)">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl">spa</span>
+<h3 class="text-xl font-bold mb-2">Entspannung vor Perfektion</h3>
+<p class="text-sm text-on-surface-variant">Nickerchen vor Abwasch.</p>
+</button>
+<button class="group text-left p-8 rounded-xl bg-white border-2 border-transparent shadow-sm hover:border-primary/20 transition-all" onclick="toggleCard(this)">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl">favorite</span>
+<h3 class="text-xl font-bold mb-2">Zeit für uns als Paar</h3>
+<p class="text-sm text-on-surface-variant">Unsere Liebe ist das Fundament.</p>
+</button>
+<button class="group text-left p-8 rounded-xl bg-white border-2 border-transparent shadow-sm hover:border-primary/20 transition-all" onclick="toggleCard(this)">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl">restaurant</span>
+<h3 class="text-xl font-bold mb-2">Frisches Essen</h3>
+<p class="text-sm text-on-surface-variant">Kraft durch gute Ernährung.</p>
+</button>
+</div>
+<div class="flex flex-col items-center gap-6">
+<button class="px-12 py-5 bg-primary text-on-primary rounded-full font-bold text-lg shadow-xl hover:bg-primary-dim transition-all active:scale-95" onclick="nextPhase(4)">Show Results</button>
+<button class="text-on-surface-variant font-semibold hover:underline">Später abschließen</button>
+</div>
+</section>
+<!-- Phase 4: Result/Ehe-Landkarte -->
+<section class="phase-hidden max-w-5xl mx-auto px-6 pt-12 pb-32" id="phase-4">
+<div class="mb-16 flex flex-col md:flex-row justify-between items-end gap-8">
+<div class="max-w-2xl">
+<div class="inline-flex items-center gap-2 px-4 py-2 bg-primary-container text-primary rounded-full text-xs font-bold uppercase tracking-widest mb-6">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">stars</span> Reise Abgeschlossen
+                </div>
+<h2 class="font-headline text-5xl md:text-7xl font-extrabold text-on-surface tracking-tight leading-none mb-6">Eure <span class="text-primary italic">Ehe-Landkarte</span></h2>
+<p class="text-on-surface-variant text-xl font-medium">Ihr habt den Check-in gemeistert. Hier sind eure gemeinsamen Schätze.</p>
+</div>
+<div class="relative w-32 h-32 md:w-40 md:h-40 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90">
+<circle class="stroke-surface-container fill-none" cx="50%" cy="50%" r="45%" stroke-width="8"></circle>
+<circle class="stroke-primary fill-none" cx="50%" cy="50%" r="45%" stroke-dasharray="283" stroke-dashoffset="0" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center font-headline text-3xl font-bold">100%</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<div class="md:col-span-8 bg-white rounded-xl p-10 shadow-sm border border-outline-variant/10 relative overflow-hidden">
+<div class="flex items-center gap-3 mb-8">
+<div class="p-3 bg-primary-container rounded-2xl">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">handshake</span>
+</div>
+<h3 class="font-headline text-2xl font-bold">Unser Pakt</h3>
+</div>
+<p class="font-headline text-2xl text-on-surface-variant italic mb-8 leading-snug">"Wir versprechen, uns gegenseitig die Erlaubnis zum Scheitern zu geben, solange wir danach gemeinsam wieder aufstehen."</p>
+<div class="flex gap-3">
+<span class="px-4 py-2 bg-surface-container text-on-surface-variant rounded-full text-sm font-semibold">Geduld</span>
+<span class="px-4 py-2 bg-surface-container text-on-surface-variant rounded-full text-sm font-semibold">Humor</span>
+</div>
+</div>
+<div class="md:col-span-4 rounded-xl overflow-hidden min-h-[300px]">
+<img class="w-full h-full object-cover grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrRTxN3HEr_TGLTi2QSWxdWeIT25xY_1_bUPfcrQvRLKlhUfJDkNCNFlUKsmrqUPbml1RdRVei4VHPPwpL08ABjjHGYE_X4GSQtEtvkxDZMFWnjNrJXlkOV7n9r2py4cgsQ_xTqv8w0jUHiiVd6Nsve21fBsBsGaELbKb7s2H2DaNVfgMcU3vH83TZV51w1rLszdWiuH2z_xnM6yxVQ9LxQflECECItgHFyubVWxYNQfx7gSCweS_HnaIA0e03cWa6l7a5DbNnjN-p"/>
+</div>
+</div>
+<div class="mt-20 flex flex-col items-center gap-8">
+<p class="font-semibold text-on-surface-variant">Bereit für das nächste Kapitel?</p>
+<div class="flex gap-4">
+<button class="bg-primary text-on-primary px-10 py-5 rounded-full font-bold text-lg shadow-lg flex items-center gap-3" onclick="nextPhase(0)">
+<span class="material-symbols-outlined">restart_alt</span> Neustart
+                </button>
+<button class="bg-secondary-container text-on-secondary-container px-10 py-5 rounded-full font-bold text-lg">Teilen</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Navigation Scripts -->
+<script>
+    function nextPhase(phaseNumber) {
+        // Hide all phases
+        for (let i = 0; i <= 4; i++) {
+            const phase = document.getElementById(`phase-${i}`);
+            if (phase) phase.classList.add('phase-hidden');
+        }
+
+        // Show header only if not on Intro
+        const header = document.getElementById('main-header');
+        if (phaseNumber === 0) {
+            header.classList.add('phase-hidden');
+        } else {
+            header.classList.remove('phase-hidden');
+        }
+
+        // Show target phase
+        const target = document.getElementById(`phase-${phaseNumber}`);
+        if (target) {
+            target.classList.remove('phase-hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }
+
+    function toggleCard(element) {
+        element.classList.toggle('card-selected');
+        
+        // Check for checkmark icon logic
+        const iconContainer = element.querySelector('.material-symbols-outlined');
+        if (element.classList.contains('card-selected')) {
+            // Potentially add logic for max selections in Phase 3
+            if (element.closest('#values-grid')) {
+                const selectedCount = document.querySelectorAll('#values-grid .card-selected').length;
+                if (selectedCount > 3) {
+                    element.classList.remove('card-selected');
+                    return;
+                }
+            }
+            iconContainer.style.fontVariationSettings = "'FILL' 1";
+        } else {
+            iconContainer.style.fontVariationSettings = "'FILL' 0";
+        }
+    }
+</script>
+</body></html>
